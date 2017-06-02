@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+*, *:after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    // font-family: 'Open Sans', Impact;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background: #ccc;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    transform-style: preserve-3d;
+}
+
+.container h1 {
+    text-align: center;
+    padding: .3em 1em;
+}
+.container svg {
+    padding: 30px 50px;
+}
+.container svg text {
+    text-anchor: middle;
+    alignment-baseline: middle;
+}

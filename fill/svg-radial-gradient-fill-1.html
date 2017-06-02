@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG gradient-fill</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 500px;
+    }
+    .container svg {
+        background: black;
+        color: #fff;
+        font-weight: bold;
+        font-family: Impact;
+        transform: translateZ(-100px) rotate3d(1, 0, -1, 10deg);
+        filter: drop-shadow(10px 30px 15px rgba(0,0,0,0.5));
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="400"> 
+            <title>Applying a gradient background to text in SVG</title>
+            <defs>
+                <radialGradient id="filler" cx="50%" cy="50%" r="50%" fx="0.5" fy="0.5">
+                    <stop stop-color="hsl(50, 60%, 60%)" offset="0%" />
+                    <stop stop-color="hsl(0, 60%, 60%)" offset="100%" />
+                </radialGradient>
+            </defs>
+            <text x="50%" y="50%" font-size="200" fill="url(#filler)"> GRADIENT</text>
+        </svg>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG stroke</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 1000px;
+    }
+    .container {
+        margin: auto;
+        background: #333;
+        transform: rotate3d(3, 1, -1, 10deg);
+        filter: drop-shadow(-30px 20px 10px rgba(0,0,0,0.4));
+    }
+    .container svg {
+        padding: 30px 50px;
+        font: 700 150px / 1 Impact, 'Open Sans';
+    }
+    .container svg text {
+        stroke: url(#stroker);
+        stroke-width: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="300"> 
+            <defs>
+                <pattern id="stroker" patternUnits="userSpaceOnUse" width="400" height="400">
+                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../images/cg2.jpg" width="1200" height="600" preserveAspectRatio="none"></image>
+                </pattern>
+            </defs>
+            <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" font-size="200">STROKE</text>
+        </svg>
+    </div>
+</body>
+</html>

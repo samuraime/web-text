@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>-webkit-background-clip</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 500px;
+    }
+    .container {
+        width: 800px;
+        background: #333;
+        transform: rotate3d(3, 1, -1, 10deg);
+        filter: drop-shadow(-30px 20px 10px rgba(0,0,0,0.4));
+    }
+    .container .clipped {
+        background: linear-gradient(hsl(0, 50%, 50%) 50%, #fff 50%) repeat-y center / 100% 50px;
+        -webkit-background-clip: text;
+        color: transparent;
+        font: 150px / 1 Impact, 'Open Sans';
+    }
+    .container h1 {
+        padding: 30px 50px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clipped">
+            <h1>TNT</h1>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>-webkit-background-clip</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 00px;
+    }
+    .container {
+        width: 800px;
+        background: #333;
+        transform: rotate3d(3, 1, -1, 10deg);
+        filter: drop-shadow(-30px 20px 10px rgba(0,0,0,0.4));
+    }
+    .container .clipped {
+        background: url(../images/cg2.jpg) no-repeat center bottom / cover;
+        -webkit-background-clip: text;
+        color: transparent;
+        font: 50px / 1 serif;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clipped">
+            <h1>Webkit Background Clip</h1>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG stroke-dashoffset</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 1000px;
+    }
+    .container {
+        margin: auto;
+        background: #333;
+        transform: rotate3d(3, 1, -1, 10deg);
+        filter: drop-shadow(-30px 20px 10px rgba(0,0,0,0.4));
+    }
+    .container svg {
+        padding: 30px 50px;
+        font: 700 150px / 1 Impact, 'Open Sans';
+    }
+    .container svg text {
+        stroke: hsl(120, 50%, 50%);
+        stroke-width: 5;
+        stroke-dasharray: 30;
+        animation: stroke 1s linear infinite;
+    }
+    @keyframes stroke {
+        from {
+            stroke-dashoffset: 0;
+        }
+        to {
+            stroke-dashoffset: -60;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="300"> 
+            <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" font-size="200">STROKE</text>
+        </svg>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG mask</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 1000px;
+    }
+    .container {
+        position: relative;
+        width: 800px;
+        height: 400px;
+        transform: translateZ(-200px) rotate3d(3, -1, 1, 10deg);
+        filter: drop-shadow(-30px 20px 15px rgba(0,0,0,0.5));
+    }
+    .container svg {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    .container text {
+        font: 900 200px / 1 Impact;
+    }
+    .svg-defs {
+        width: 0;
+        height: 0;
+    }
+
+    .svg-inverted-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .mask-shape {
+        fill: white;
+    }
+
+    .shape--fill {
+        fill: #000;
+    }
+
+    .text--transparent {
+        fill: transparent;
+    }
+    .box-with-text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .text-fill {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+    }
+    .video {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg viewBox="0 0 600 300" class="svg-defs">
+            <!-- Symbol with text -->
+            <symbol id="s-text">
+                <text x="50%" y="50%" font-size="200" class="text">TEXT</text>
+            </symbol>
+            <!-- Mask with text -->
+            <mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+                <rect width="100%" height="100%" class="mask-shape" />
+                <use xlink:href="#s-text" class="mask-text" />
+            </mask>
+        </svg>
+
+        <div class="box-with-text">
+          <!-- Container for video -->
+          <div class="text-fill">
+                <video  class="video" src="../images/bokeh.mp4" autoplay loop />
+          </div>
+
+          <!-- Visible SVG -->
+          <svg viewBox="0 0 600 300" class="svg-inverted-mask">
+                <rect width="100%" height="100%" mask="url(#m-text)" class="shape--fill" />
+                <use xlink:href="#s-text" class="text--transparent" />
+          </svg> 
+        </div>
+    </div>
+</body>
+</html>

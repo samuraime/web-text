@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG mask</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 1000px;
+    }
+    .container svg {
+        background: #0F6998 url(../images/cg2.jpg) center / cover;
+        transform: translateZ(-200px) rotate3d(3, -1, 1, 10deg);
+        color: #fff;
+        font-weight: bold;
+        font-family: Impact;
+        filter: drop-shadow(-30px 20px 15px rgba(0,0,0,0.5));
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="380"> 
+            <title>Adding Texture to Text using SVG Masks</title>
+            <defs>
+                <mask id="mask">
+                    <image width="1200px" height="1200px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../images/splatter-mask-luminance.png" preserveAspectRatio="none" />
+                </mask>
+            </defs>
+            <text x="50%" y="55%" font-size="200" fill="#fff" mask="url(#mask)">LOST CITY</text>
+        </svg>
+    </div>
+</body>
+</html>

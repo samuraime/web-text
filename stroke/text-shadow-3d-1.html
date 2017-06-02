@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>text-shadow-3d</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 500px;
+    }
+    .container {
+        width: 600px;
+        margin: auto;
+        background: url(../images/water.jpg) no-repeat center / cover;
+        transform: rotate3d(3, 1, -1, 10deg);
+        filter: drop-shadow(-30px 20px 10px rgba(0,0,0,0.4));
+    }
+    .container h1 {
+        margin: 0;
+        padding: 30px 50px;
+        text-transform: uppercase;
+        font: 700 150px / 1 Impact, 'Open Sans';
+        letter-spacing: .1em;
+        color: hsl(220, 50%, 50%);
+        mix-blend-mode: screen;
+        text-shadow: -1px 1px #fff, 
+            -2px 2px #fff,
+            -3px 3px #fff,
+            -4px 4px #fff,
+            -5px 5px #fff,
+            -6px 6px #fff,
+            -7px 7px #fff,
+            -8px 8px #fff,
+            -9px 9px #fff,
+            -10px 10px #fff;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Water</h1>
+    </div>
+</body>
+</html>

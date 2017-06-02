@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG pattern-fill</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 1000px;
+    }
+    .container svg {
+        background-color: black;
+        font-weight: bold;
+        font-family: Impact;
+        color: white;
+        margin: 30px auto;
+        transform: translateZ(-100px) rotate3d(2, 1, -1, 10deg);
+        filter: drop-shadow(-30px 20px 15px rgba(0,0,0,0.5));
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="700" height="400">
+            <title>Applying a patterned background to text in SVG</title>
+            <defs>
+                <pattern id="filler" patternUnits="userSpaceOnUse" width="400" height="400">
+                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../images/purty_wood.png" width="1200" height="600" preserveAspectRatio="none"></image>
+                </pattern>
+            </defs>
+            <text x="50%" y="50%" font-size="200" fill="url(#filler)">WOOD</text>
+        </svg>
+    </div>
+</body>
+</html>

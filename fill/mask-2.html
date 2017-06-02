@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>mask</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 800px;
+    }
+    .container {
+        padding: 2em;
+        transform: rotate3d(3, -3, 1, 10deg);
+        background: url(../images/cg2.jpg) center / cover;
+        filter: drop-shadow(50px 50px 20px rgba(0,0,0,0.4));
+    }
+    .container h1 {
+        font: 900 20em / 1 Impact, 'Open Sans';
+        padding: 0;
+        color: #fff;
+        -webkit-mask-image: url(../images/splatter-mask.png);
+        mask-image: url(../images/splatter-mask.png);
+    }
+    .container h2 {
+        font: 4em / 1 Impact, 'Open Sans';
+        color: #fff;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ART</h1>
+        <h2>DIGITAL MAGAZINE</h2>
+    </div>
+</body>
+</html>

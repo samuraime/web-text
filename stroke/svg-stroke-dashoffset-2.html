@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG stroke-dashoffset</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style type="text/css">
+    body {
+        perspective: 1000px;
+    }
+    .container {
+        margin: auto;
+        background: #333;
+        transform: rotate3d(3, 1, -1, 10deg);
+        filter: drop-shadow(-30px 20px 10px rgba(0,0,0,0.4));
+    }
+    .container svg {
+        padding: 30px 50px;
+        font: 700 150px / 1 Impact, 'Open Sans';
+    }
+    .container svg text {
+        stroke: hsl(120, 50%, 50%);
+        stroke-width: 5;
+        stroke-dasharray: 1000;
+        animation: stroke 10s linear infinite;
+    }
+    @keyframes stroke {
+        from {
+            stroke-dashoffset: -500;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="300"> 
+            <defs>
+                <pattern id="filler" patternUnits="userSpaceOnUse" width="400" height="400">
+                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../images/purty_wood.png" width="1200" height="600" preserveAspectRatio="none"></image>
+                </pattern>
+            </defs>
+            <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" font-size="200">STROKE</text>
+        </svg>
+    </div>
+</body>
+</html>
